@@ -5,15 +5,15 @@ public class FooBarQix {
     public static String execute(Integer num) {
         String answer = "";
 
-        answer = apply(num, answer);
-        answer = addFooBarQix(num, answer);
-        answer = numToStringIfNonFooBarQix(num, answer);
+        answer = applyFooBarQix(num, answer);
+        answer = addSuffixFooBarQix(num, answer);
+        answer = returnNumbersIfcontainsNoFooBarQix(num, answer);
 
 
         return answer;
     }
 
-    private static String numToStringIfNonFooBarQix(Integer num, String answer) {
+    private static String returnNumbersIfcontainsNoFooBarQix(Integer num, String answer) {
         if (answer.isEmpty()) {
             String str = num.toString();
             String[] strs = str.split("");
@@ -29,7 +29,7 @@ public class FooBarQix {
         return answer;
     }
 
-    private static String addFooBarQix(Integer num, String answer) {
+    private static String addSuffixFooBarQix(Integer num, String answer) {
         String str = num.toString();
         String[] strs = str.split("");
 
@@ -48,7 +48,7 @@ public class FooBarQix {
         return answer;
     }
 
-    private static String apply(int num, String answer) {
+    private static String applyFooBarQix(int num, String answer) {
         if (isDivisibleBy(num, 3)) {
             answer += "Foo";
         }
