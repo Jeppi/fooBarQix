@@ -7,17 +7,18 @@ public class FooBarQix {
 
         answer = applyFooBarQix(num, answer);
         answer = addSuffixFooBarQix(num, answer);
-        answer = returnNumbersIfcontainsNoFooBarQix(num, answer);
+        answer = returnNumbersIfContainsNoFooBarQix(num, answer);
 
 
         return answer;
     }
 
-    private static String returnNumbersIfcontainsNoFooBarQix(Integer num, String answer) {
+    private static String returnNumbersIfContainsNoFooBarQix(Integer num, String answer) {
         if (answer.isEmpty()) {
             String str = num.toString();
             String[] strs = str.split("");
 
+            // RM : On doit remplacer les 0 et garder les autres chiffres.
             for (String st : strs) {
                 if (st.equals("0")) {
                     answer += "*";
@@ -41,6 +42,7 @@ public class FooBarQix {
             } else if (st.equals("7")) {
                 answer += "Qix";
             } // un nombre ne peut commencer par un 0, s'il s'agit d'un autre chiffre ça ne fonctionnera pas
+            // TODO : à généraliser
             else if (st.equals("0") && !answer.isEmpty()) {
                 answer += "*";
             }
