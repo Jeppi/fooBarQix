@@ -31,7 +31,7 @@ public class FooBarQixF {
     private static String applySuffixFooBarQix(Integer num, String answer) {
 
         answer += Arrays.stream(num.toString().split(""))
-                .map(FooBarQixF::replaceByFooBarQix)
+                .map(FooBarQixF::replaceByFooBarQixStar)
                 .reduce("", String::concat);
 
         // Si on n'a pas de Foo Bar ou Fix avant "*", "*" sera traité dans le cas de conversion numérique,
@@ -44,7 +44,7 @@ public class FooBarQixF {
     }
 
 
-    private static String replaceByFooBarQix(String element) {
+    private static String replaceByFooBarQixStar(String element) {
         String answer = "";
         switch (element) {
             case "3" -> answer = "Foo";
