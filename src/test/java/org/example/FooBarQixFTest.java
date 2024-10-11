@@ -3,12 +3,12 @@ package org.example;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.example.FooBarQix.execute;
+import static org.example.FooBarQixF.execute;
 
-class FooBarQixTest {
+class FooBarQixFTest {
 
     @Test
-    public void foobarqix() {
+    public void foobarqixF() {
 
         assertThat(execute(1)).isEqualTo("1");
         assertThat(execute(2)).isEqualTo("2");
